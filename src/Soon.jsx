@@ -21,7 +21,7 @@ export default function Soon() {
   useEffect(() => {
     const checkSiteStatus = async () => {
       try {
-        const response = await fetch('http://localhost:3001/api/site-status');
+        const response = await fetch('https://come-soon-server.onrender.com/api/site-status');
         const data = await response.json();
         if (data.siteLive) {
           setSiteLive(true);
@@ -77,7 +77,7 @@ export default function Soon() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3001/api/subscribe', {
+      const response = await fetch('https://come-soon-server.onrender.com/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
